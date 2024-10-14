@@ -1,3 +1,25 @@
 apiVersion: v1
-entries: {}
-generated: "2024-10-14T13:49:00.806688144+07:00"
+entries:
+  cluster-apps:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-10-14T06:51:21.529275144Z"
+    dependencies:
+    - name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.11.3
+    - name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.16.1
+    - alias: cert-issuer-prod
+      name: cert-issuer
+      repository: https://dhis2-sre.github.io/cert-issuer-helm
+      version: 0.3.0
+    description: A Helm chart for Kubernetes
+    digest: 692afa44f47c8f454cfd58a9424730cb3cba93d45e9258f00352efc53ca3b2c8
+    name: cluster-apps
+    type: application
+    urls:
+    - https://github.com/dhis2-sre/cluster-apps-chart/releases/download/cluster-apps-0.1.2/cluster-apps-0.1.2.tgz
+    version: 0.1.2
+generated: "2024-10-14T06:51:21.529287106Z"
