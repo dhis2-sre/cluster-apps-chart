@@ -6,7 +6,7 @@ ingress-nginx:
   controller:
     service:
       annotations:
-        service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: *
+        service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
     config:
       use-proxy-protocol: true
       real-ip-header: proxy_protocol
