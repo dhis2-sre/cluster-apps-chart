@@ -1,0 +1,14 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: cluster-apps
+deploy:
+  helm:
+    releases:
+      - name: cluster-apps
+        namespace: cluster-apps
+        createNamespace: true
+        chartPath: ./charts/cluster-apps
+#        valuesFiles:
+#          - values.yaml
+#        version: 0.1.2

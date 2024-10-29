@@ -12,12 +12,12 @@ ingress-nginx:
       real-ip-header: proxy_protocol
     ingressClassResource:
       default: true
-    metrics:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-        additionalLabels:
-          release: prometheus-stack
+#    metrics:
+#      enabled: true
+#      serviceMonitor:
+#        enabled: true
+#        additionalLabels:
+#          release: prometheus-stack
 
 cert-manager:
   installCRDs: true
