@@ -8,5 +8,14 @@ dependencies:
 - name: cert-issuer
   repository: https://dhis2-sre.github.io/cert-issuer-helm
   version: 0.3.0
-digest: sha256:858e76ebd8b256b9b1c6d3694e2acb8f7073e2cac755a16984d5bbdf73fca107
-generated: "2024-10-29T15:45:47.718478156+07:00"
+- name: loki-stack
+  repository: https://grafana.github.io/helm-charts
+  version: 2.10.1
+- name: metrics-server
+  repository: https://kubernetes-sigs.github.io/metrics-server
+  version: 3.12.2
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 65.5.0
+digest: sha256:e02403111160a99a45293c9ceb47e35230ec7efb54df79b249fd9c9a53c47fbd
+generated: "2024-10-29T16:07:53.548169377+07:00"
