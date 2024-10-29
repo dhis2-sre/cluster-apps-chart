@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.2
+version: 0.2.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -34,3 +34,15 @@ dependencies:
     version: 0.3.0
     repository: https://dhis2-sre.github.io/cert-issuer-helm
     alias: cert-issuer-prod
+  - name: loki-stack
+    version: 2.10.1
+    repository: https://grafana.github.io/helm-charts
+    alias: loki-stack
+  - name: metrics-server
+    version: 3.12.2
+    alias: metrics-server
+    repository: https://kubernetes-sigs.github.io/metrics-server
+  - name: kube-prometheus-stack
+    version: 65.5.0
+    repository: https://prometheus-community.github.io/helm-charts
+    alias: kube-prometheus-stack
