@@ -3,6 +3,35 @@ entries:
   cluster-apps:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2024-11-06T09:44:52.039948282Z"
+    dependencies:
+    - name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.11.3
+    - name: cert-manager
+      repository: https://charts.jetstack.io
+      version: 1.16.1
+    - alias: loki-stack
+      name: loki-stack
+      repository: https://grafana.github.io/helm-charts
+      version: 2.10.1
+    - alias: metrics-server
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server
+      version: 3.12.2
+    - alias: kube-prometheus-stack
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 65.5.0
+    description: A Helm chart for Kubernetes
+    digest: 273e97fcf2752cdcb9fb09fc9ddef56b47ec9290d64f77bc21647bf7aecc9b65
+    name: cluster-apps
+    type: application
+    urls:
+    - https://github.com/dhis2-sre/cluster-apps-chart/releases/download/cluster-apps-0.3.0/cluster-apps-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2024-10-29T10:18:27.411452382Z"
     dependencies:
     - name: ingress-nginx
@@ -55,4 +84,4 @@ entries:
     urls:
     - https://github.com/dhis2-sre/cluster-apps-chart/releases/download/cluster-apps-0.1.2/cluster-apps-0.1.2.tgz
     version: 0.1.2
-generated: "2024-10-29T10:18:27.411462672Z"
+generated: "2024-11-06T09:44:52.039960665Z"
