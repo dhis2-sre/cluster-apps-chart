@@ -30,10 +30,6 @@ dependencies:
   - name: cert-manager
     version: 1.16.1
     repository: https://charts.jetstack.io
-  - name: cert-issuer
-    version: 0.3.0
-    repository: https://dhis2-sre.github.io/cert-issuer-helm
-    alias: cert-issuer-prod
   - name: loki-stack
     version: 2.10.1
     repository: https://grafana.github.io/helm-charts
