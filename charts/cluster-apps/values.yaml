@@ -50,3 +50,38 @@ kube-prometheus-stack:
     prometheusSpec:
       podMonitorSelectorNilUsesHelmValues: false
       serviceMonitorSelectorNilUsesHelmValues: false
+
+# values.yaml in the umbrella chart
+
+velero:
+  image:
+    repository: velero/velero
+    tag: v1.14.1
+
+  initContainers:
+    - name: velero-plugin-for-aws
+      image: velero/velero-plugin-for-aws:v1.10.1
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - mountPath: /target
+          name: plugins
+
+  securityContext:
+    fsGroup: 65534
+
+  configuration:
+    provider: aws
+
+    backupStorageLocation:
+      name: default
+      provider: aws
+      bucket: instance-cluster-test-backup
+      prefix: velero/
+      config:
+        region: eu-central-1
+
+    volumeSnapshotLocation:
+      name: default
+      provider: aws
+      config:
+        region: eu-central-1
