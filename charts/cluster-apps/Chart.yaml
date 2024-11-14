@@ -42,3 +42,10 @@ dependencies:
     version: 65.5.0
     repository: https://prometheus-community.github.io/helm-charts
     alias: kube-prometheus-stack
+  - name: velero
+    # TODO update the chart version, as the latest version of the Velero chart is 8.0.0
+    # 2.29.4 is the version we are currently installing through the TF module
+    # https://artifacthub.io/packages/helm/vmware-tanzu/velero
+    # https://github.com/terraform-module/terraform-kubernetes-velero/blob/v1.2.1/main.tf#L39
+    version: 2.29.4
+    repository: https://vmware-tanzu.github.io/helm-charts
