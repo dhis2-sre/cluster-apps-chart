@@ -5,14 +5,14 @@ dependencies:
 - name: cert-manager
   repository: https://charts.jetstack.io
   version: v1.16.1
-- name: loki-stack
+- name: loki
   repository: https://grafana.github.io/helm-charts
-  version: 2.10.1
+  version: 6.21.0
 - name: metrics-server
   repository: https://kubernetes-sigs.github.io/metrics-server
   version: 3.12.2
 - name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
   version: 65.5.0
-digest: sha256:d7be50b8ff5259a711a00fbddae3aac3d2f6fbbc4466caa5792be16dfd2d9849
-generated: "2024-11-06T13:34:23.397540627+07:00"
+digest: sha256:ea82ffb0bc7799a23a9f9cdaf0fe7d60f3543df32347aa40680358f8a3b54ba6
+generated: "2024-11-21T12:56:10.254322+02:00"
