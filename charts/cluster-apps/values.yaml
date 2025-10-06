@@ -97,13 +97,11 @@ promtail:
           pipeline_stages:
             - docker: {}
           relabel_configs:
-            # Index essential labels
             - source_labels: [__meta_kubernetes_namespace]
               target_label: namespace
             - source_labels: [__meta_kubernetes_pod_name]
               target_label: pod
             - source_labels: [__meta_kubernetes_container_name]
               target_label: container
-            # Index app.kubernetes.io/instance specifically
             - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_instance]
               target_label: instance
