@@ -80,6 +80,8 @@ loki:
     auth_enabled: false
   minio:
     enabled: true
+    persistence:
+      size: 20Gi
   deploymentMode: "SingleBinary<->SimpleScalable"
   singleBinary:
     replicas: 1
