@@ -3,6 +3,7 @@
 # Declare variables to be passed into your templates.
 
 ingress-nginx:
+  enabled: true
   controller:
     service:
       annotations:
@@ -20,6 +21,7 @@ ingress-nginx:
           release: cluster-apps
 
 cert-manager:
+  enabled: true
   installCRDs: true
 
 cert-issuer-prod:
@@ -28,7 +30,11 @@ cert-issuer-prod:
   # Unsetting the ingressClass value, in order to use default ingress class.
   ingressClass: ""
 
+metrics-server:
+  enabled: true
+
 kube-prometheus-stack:
+  enabled: true
   grafana:
     persistence:
       enabled: true
@@ -58,6 +64,7 @@ kube-prometheus-stack:
       serviceMonitorSelectorNilUsesHelmValues: false
 
 loki:
+  enabled: true
   loki:
     commonConfig:
       replication_factor: 1
@@ -87,6 +94,7 @@ loki:
     replicas: 1
 
 promtail:
+  enabled: true
   config:
     clients:
       - url: http://{{ .Release.Name }}-loki:3100/loki/api/v1/push
@@ -107,3 +115,9 @@ promtail:
               target_label: container
             - source_labels: [__meta_kubernetes_pod_label_app_kubernetes_io_instance]
               target_label: instance
+
+k8s-monitoring:
+  enabled: false
+  cluster:
+    name: ""
+  destinations: []
