@@ -17,5 +17,8 @@ dependencies:
 - name: promtail
   repository: https://grafana.github.io/helm-charts
   version: 6.17.0
-digest: sha256:01b796e18ca9ab4152d78ac882f324a42e98e1107d400754e66bd101bddca8b5
-generated: "2025-10-03T08:53:29.066048293+07:00"
+- name: k8s-monitoring
+  repository: https://grafana.github.io/helm-charts
+  version: 4.1.0
+digest: sha256:199cd985c07acca4edf1b2c854bd21817fa7040fd1bef4eb49cb834e2ba79d5b
+generated: "2026-05-08T04:09:33.100563684+07:00"
