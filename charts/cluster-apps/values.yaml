@@ -89,9 +89,15 @@ loki:
     enabled: true
     persistence:
       size: 20Gi
-  deploymentMode: "SingleBinary<->SimpleScalable"
+  deploymentMode: SingleBinary
   singleBinary:
     replicas: 1
+  read:
+    replicas: 0
+  write:
+    replicas: 0
+  backend:
+    replicas: 0
 
 promtail:
   enabled: true
@@ -120,4 +126,4 @@ k8s-monitoring:
   enabled: false
   cluster:
     name: ""
-  destinations: []
+  destinations: {}
