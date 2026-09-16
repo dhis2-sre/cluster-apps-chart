@@ -98,6 +98,7 @@ loki:
     replicas: 1
     persistence:
       size: 30Gi
+      enableStatefulSetAutoDeletePVC: false
   read:
     replicas: 0
   write:
