@@ -36,6 +36,10 @@ metrics-server:
 kube-prometheus-stack:
   enabled: true
   grafana:
+    # The grafana PVC is ReadWriteOnce, so a rolling update deadlocks: the new pod
+    # cannot attach the volume until the old one releases it.
+    deploymentStrategy:
+      type: Recreate
     persistence:
       enabled: true
       size: 20Gi
