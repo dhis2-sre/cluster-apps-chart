@@ -51,7 +51,7 @@
             "uid": "P8E80F9AEF21F6940"
           },
           "editorMode": "code",
-          "expr": "{namespace=\"$Namespace\", im_deployment_id=\"$DeploymentId\", app=~\"$App\"} |= `$search`",
+          "expr": "{namespace=\"$Namespace\", instance=~\"$Instance(-.*)?\", app=~\"$App\"} |= `$search`",
           "queryType": "range",
           "refId": "A"
         }
@@ -112,39 +112,11 @@
         "query": {
           "label": "instance",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "{namespace=\"$Namespace\", app=\"core\"}",
+          "stream": "{namespace=\"$Namespace\"}",
           "type": 1
         },
         "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 5,
-        "type": "query"
-      },
-      {
-        "current": {
-          "selected": false,
-          "text": "",
-          "value": ""
-        },
-        "datasource": {
-          "type": "loki",
-          "uid": "P8E80F9AEF21F6940"
-        },
-        "definition": "",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "DeploymentId",
-        "options": [],
-        "query": {
-          "label": "im_deployment_id",
-          "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "{namespace=\"$Namespace\", instance=\"$Instance\"}",
-          "type": 1
-        },
-        "refresh": 1,
-        "regex": "",
+        "regex": "/^[a-z0-9][a-z0-9-]*$/",
         "skipUrlSync": false,
         "sort": 5,
         "type": "query"
@@ -174,7 +146,7 @@
         "query": {
           "label": "app",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "{namespace=\"$Namespace\", im_deployment_id=\"$DeploymentId\"}",
+          "stream": "{namespace=\"$Namespace\", instance=~\"$Instance(-.*)?\"}",
           "type": 1
         },
         "refresh": 1,
