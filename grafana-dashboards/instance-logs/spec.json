@@ -39,10 +39,10 @@
         "enableLogDetails": true,
         "prettifyLogMessage": false,
         "showCommonLabels": false,
-        "showLabels": false,
-        "showTime": false,
+        "showLabels": true,
+        "showTime": true,
         "sortOrder": "Descending",
-        "wrapLogMessage": false
+        "wrapLogMessage": true
       },
       "targets": [
         {
@@ -50,13 +50,13 @@
             "type": "loki",
             "uid": "P8E80F9AEF21F6940"
           },
-          "editorMode": "builder",
-          "expr": "{instance=\"$Instance\", app=\"core\"} |= `$search`",
+          "editorMode": "code",
+          "expr": "{namespace=\"$Namespace\", im_deployment_id=\"$DeploymentId\", im_type=~\"$Component\"} |= `$search`",
           "queryType": "range",
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "Logs",
       "type": "logs"
     }
   ],
@@ -68,8 +68,8 @@
       {
         "current": {
           "selected": false,
-          "text": "android",
-          "value": "android"
+          "text": "",
+          "value": ""
         },
         "datasource": {
           "type": "loki",
@@ -96,8 +96,8 @@
       {
         "current": {
           "selected": false,
-          "text": "dev",
-          "value": "dev"
+          "text": "",
+          "value": ""
         },
         "datasource": {
           "type": "loki",
@@ -112,7 +112,69 @@
         "query": {
           "label": "instance",
           "refId": "LokiVariableQueryEditor-VariableQuery",
-          "stream": "{namespace=\"$Namespace\"}",
+          "stream": "{namespace=\"$Namespace\", app=\"core\"}",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "datasource": {
+          "type": "loki",
+          "uid": "P8E80F9AEF21F6940"
+        },
+        "definition": "",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "DeploymentId",
+        "options": [],
+        "query": {
+          "label": "im_deployment_id",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "{namespace=\"$Namespace\", instance=\"$Instance\"}",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "type": "query"
+      },
+      {
+        "allValue": ".*",
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "loki",
+          "uid": "P8E80F9AEF21F6940"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Component",
+        "multi": true,
+        "name": "Component",
+        "options": [],
+        "query": {
+          "label": "im_type",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "{namespace=\"$Namespace\", im_deployment_id=\"$DeploymentId\"}",
           "type": 1
         },
         "refresh": 1,
