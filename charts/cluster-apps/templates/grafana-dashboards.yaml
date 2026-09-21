@@ -1,0 +1,19 @@
+{{/*
+Grafana loads these through its sidecar, which watches every namespace for config maps labelled
+grafana_dashboard. Keeping the dashboards in the chart means a deploy carries them, rather than
+them living only on Grafana's volume where nothing but a hand copy updates them.
+*/}}
+{{- range $path, $_ := .Files.Glob "dashboards/*.json" }}
+{{- $name := trimSuffix ".json" (base $path) }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $.Release.Name }}-dashboard-{{ $name }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    grafana_dashboard: "1"
+data:
+  {{ $name }}.json: |
+{{ $.Files.Get $path | indent 4 }}
+{{- end }}
