@@ -95,6 +95,12 @@ loki:
     auth_enabled: false
   minio:
     enabled: true
+    image:
+      repository: docker.io/pgsty/minio
+      tag: RELEASE.2026-03-14T12-00-00Z
+    mcImage:
+      repository: docker.io/pgsty/mc
+      tag: RELEASE.2026-03-13T08-57-32Z
     persistence:
       size: 50Gi
   deploymentMode: SingleBinary
