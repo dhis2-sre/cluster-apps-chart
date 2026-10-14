@@ -31,16 +31,17 @@ skaffold run
 
 ## Release chart
 
-Bump the version in [Chart.yaml](./charts/cluster-apps/Chart.yaml), commit and push.
+Bump the version in [Chart.yaml](./charts/cluster-apps/Chart.yaml) and merge the change to `master`.
 
 **NOTE: do not create a tag yourself!**
 
-Our release workflow will then using [Helm chart releaser action](https://github.com/helm/chart-releaser-action)
+The release workflow:
 
-* create a tag `cluster-apps-<version>`
-* create a [release](https://github.com/dhis2-sre/cluster-apps-chart/releases) associated with the new tag
-* commit an updated index.yaml with the new release
-* redeploy the GitHub pages to serve the new index.yaml
+* packages the chart and creates its GitHub release and tag `cluster-apps-<version>`, skipping existing releases
+* builds the documentation and indexes the published chart packages, including older versions
+* uploads and deploys the site using GitHub's standard Pages actions
 
-Note: there might be a slight delay between the release and the `index.yaml` file being updated as GitHub pages have to
-be re-deployed.
+In Settings -> Pages, the source must be **GitHub Actions**. The index is generated from the
+[releases](https://github.com/dhis2-sre/cluster-apps-chart/releases) and is not committed to the repository.
+
+To retry publication after a failure, run **Release Charts** manually on `master`.
