@@ -40,7 +40,7 @@ jobs:
           helm dependency build charts/cluster-apps
 
       - name: Install chart-releaser
-        uses: helm/chart-releaser-action@v1.7.0
+        uses: helm/chart-releaser-action@v1.8.0
         with:
           install_only: true
 
