@@ -20,5 +20,8 @@ dependencies:
 - name: k8s-monitoring
   repository: https://grafana.github.io/helm-charts
   version: 4.1.0
-digest: sha256:199cd985c07acca4edf1b2c854bd21817fa7040fd1bef4eb49cb834e2ba79d5b
-generated: "2026-05-08T04:09:33.100563684+07:00"
+- name: doris-operator
+  repository: https://charts.selectdb.com
+  version: 25.8.0
+digest: sha256:9138f226847484a5c74384f403848a4e78951e2d2ffa1e1bd03cb2b6db9865ba
+generated: "2026-11-10T11:01:57.769115+02:00"

@@ -140,3 +140,12 @@ k8s-monitoring:
       instance: app.kubernetes.io/instance
       im_deployment_id: im-deployment-id
       im_type: im-type
+
+doris-operator:
+  enabled: false
+  dorisOperator:
+    image:
+      # Pinned instead of the chart's operator-latest. Helm never upgrades the DorisCluster CRD, so
+      # the CRD for this same version has to be applied separately.
+      tag: operator-26.0.1
+      imagePullPolicy: IfNotPresent
