@@ -1,7 +1,4 @@
 dependencies:
-- name: ingress-nginx
-  repository: https://kubernetes.github.io/ingress-nginx
-  version: 4.11.3
 - name: cert-manager
   repository: https://charts.jetstack.io
   version: v1.16.1
@@ -23,5 +20,5 @@ dependencies:
 - name: doris-operator
   repository: https://charts.selectdb.com
   version: 25.8.0
-digest: sha256:9138f226847484a5c74384f403848a4e78951e2d2ffa1e1bd03cb2b6db9865ba
-generated: "2026-11-10T11:01:57.769115+02:00"
+digest: sha256:286db8c92b8a59096ef90eb0ea9c3992f3cd2deebb56c96b588a3a7c1fbe2e47
+generated: "2026-11-19T10:08:13.950837+02:00"
